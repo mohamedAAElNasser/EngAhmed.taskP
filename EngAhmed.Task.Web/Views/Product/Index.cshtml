@@ -1,0 +1,52 @@
+﻿@model List<EngAhmed.TaskP.Web.Models.ViewModels.ProductViewModels.ProductVm>
+
+@{
+    ViewData["Titel"] = "Products";
+}
+
+<div class="contentList">
+    <a class="btn btn-primary d-block mb-3" asp-action="Create">Create New Product</a>
+    <a class="btn btn-info" id="printReport">Print Report</a>
+    <a class="btn btn-secondary" href="/Product/DownloadReport">Download Pdf Report</a>
+    <a class="btn btn-success" href="/Product/DownloadExcelReport">Download Excel  Report DevExpress</a>
+    <a class="btn btn-dark" href="/Product/DownloadWordReport">Download Word Report DevExpress</a>
+    
+    <a class="btn btn-warning" id="printReportDevExpressBtn">Print DevExpress Report</a>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Price</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in Model)
+            {
+                <tr>
+                    <td>@product.name</td>
+                    <td>@product.price</td>
+                    <td><a href="/Product/Edit?id=@product.id" class="btn btn-success">Edit</a></td>
+                    <td><a href="/Product/Delete?id=@product.id" class="btn btn-danger">Delete</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+@section Scripts{
+<script>
+
+    $(function () {
+        $('#printReport').click(function () {
+            window.open('/Product/PrintReport', '_blank').focus();
+        });
+            $('#printReportDevExpressBtn').click(function () {
+            window.open('/Product/PrintReportDevExpress', '_blank').focus();
+        })
+    });
+    
+    
+</script>
+}

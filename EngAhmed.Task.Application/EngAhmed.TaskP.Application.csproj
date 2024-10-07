@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <PackageReference Include="DevExpress.AspNetCore.Reporting" Version="24.1.6" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.8" />
+	<PackageReference Include="QuestPDF" Version="2024.7.3" />
+
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EngAhmed.Task.Domain\EngAhmed.TaskP.Domain.csproj" />
+    <ProjectReference Include="..\EngAhmed.Task.TaskIdentity\EngAhmed.TaskP.TaskIdentity.csproj" />
+  </ItemGroup>
+
+</Project>
